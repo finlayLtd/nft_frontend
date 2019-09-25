@@ -45,7 +45,7 @@
     "promise": "8.0.3",
     "react-dev-utils": "^9.0.4",
     "react-scripts": "^3.1.1",
-    "react-test-renderer": "^15.5.4",
+    "react-test-renderer": "^16.9.0",
     "recursive-readdir": "2.2.2",
     "rimraf": "3.0.0",
     "strip-ansi": "5.2.0",
@@ -57,7 +57,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "2.1.0",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
     "whatwg-fetch": "3.0.0"
   },
