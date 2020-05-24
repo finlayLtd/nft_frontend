@@ -2,7 +2,6 @@ import React from "react";
 import {MarketingButton} from "../styles/Button";
 import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection} from "../styles/Header";
 import {sauceFull, pizza} from "../images";
-import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function Hero({handleLogIn}) {
   return (
@@ -26,10 +25,7 @@ function Hero({handleLogIn}) {
             Login
           </MarketingButton>
           <a href="">
-            <MarketingButton>
-              <Octicon verticalAlign="middle" icon={getIconByName("book")} />
-              {" "}Read The Story
-            </MarketingButton>
+            <MarketingButton>Read The Story</MarketingButton>
           </a>
         </Wrapper>
       </SubHero>
