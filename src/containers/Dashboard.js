@@ -2,11 +2,12 @@ import React, {Suspense} from "react";
 import Repository from "../components/Repository";
 import RepositoryGoals from "../components/RepositoryGoals";
 import {Route} from "react-router-dom";
+import {Spinner} from "../styles/Spinner";
 
-function Repositories({user, match}) {
+function Repositories({match}) {
   return (
-    <Suspense fallback={<div>loading...</div>}>
-      <Route exact path={match.url} render={(props) => <RepositoryGoals user={user} {...props} />} />
+    <Suspense fallback={<Spinner />}>
+      <Route exact path={match.url} component={RepositoryGoals} />
       <Route path={"/repos/:repoOwner/:repoName/:id"} component={Repository} />
     </Suspense>
   );
