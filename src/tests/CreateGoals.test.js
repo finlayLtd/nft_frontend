@@ -21,3 +21,4 @@ test("should render a link to track first repository if there are no repositorie
   const {container} = render(<CreateGoals />);
   expect(container).toHaveTextContent("Open Sauced is a tool to help track your next open source contributions.");
 });
+

@@ -5,3 +5,4 @@ const FormColumn = styled.div`
 `;
 
 export default FormColumn;
+
