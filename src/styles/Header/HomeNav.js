@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {size, colors} from "../variables";
+import {size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Container = styled.nav`
@@ -7,10 +7,10 @@ const Container = styled.nav`
   align-items: center;
   justify-content: space-between;
   font-size: ${size.micro};
-  background-color: ${colors.grey};
+  background-color: #fff;
   padding: ${size.tiny};
   margin: auto;
-  box-shadow: 0 .200rem .25rem rgba(0,0,0,.075);
+
 
   img {
     height: ${size.small}
@@ -23,11 +23,8 @@ const Container = styled.nav`
 
   li {
     font-size: ${size.tiny}
-    margin-right: ${size.tiny};
-  }
-
-  a {
-    vertical-align: middle;
+    text-transform: uppercase;
+    margin-right: ${size.micro};
   }
 
   span {
