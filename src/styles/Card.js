@@ -39,12 +39,8 @@ const Card = styled.div`
   }
 
   span {
-    font-size: 12px;
-    font-weight: bold;
-    margin: ${size.tiny} ${size.tiny} 0 0;
-    padding: 5px;
-    color: #fff;
-    border-radius: 5px;
+    font-size: ${size.micro};
+    margin: ${size.tiny} ${size.small} 0 0;
   }
 
   small {
