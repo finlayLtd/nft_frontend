@@ -120,6 +120,8 @@ const QuoteSection = styled(Hero)`
   }
 
   .quote-image {
+    max-width: 150px;
+    max-height: 150px;
     float: left;
     width: 150px;
     margin-right: 20px;
@@ -164,7 +166,7 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 10px;
+  padding-top: 100px;
 
   span {
     width: 80%;
