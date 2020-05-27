@@ -52,7 +52,7 @@ function Issues({repoName, owner}) {
   const currentPage = offset / 5 + 1;
 
   return owner ? (
-    totalCount > 0 ? (
+    totalCount > 0 && (
       <Card fitted>
         <CardPadding>
           <h1>Issues</h1>
@@ -75,8 +75,6 @@ function Issues({repoName, owner}) {
           </CardPadding>
         </List>
       </Card>
-    ) : (
-      <p>Nothing Here</p>
     )
   ) : (
     <p>...Loading</p>
