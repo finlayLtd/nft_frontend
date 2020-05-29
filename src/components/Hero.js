@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {MarketingButton} from "../styles/Button";
-import {Wrapper, FoodElements, SaucePosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
-import {sauceFull} from "../images";
+import {Wrapper, FoodElements, SaucePosition, PizzaPosition, TopHero, SubHero, TrustSection, QuoteSection, DetailsSection} from "../styles/Header";
+import {sauceFull, pizza} from "../images";
 import {logo1 as logo} from "../logos";
 import {Flex, FlexColumn} from "../styles/Grid";
 
@@ -18,6 +18,7 @@ function Hero({handleLogIn}) {
           </div>
           <FoodElements>
             <SaucePosition alt="sauce" src={sauceFull} />
+            <PizzaPosition alt="pizza" src={pizza} />
           </FoodElements>
         </Wrapper>
       </TopHero>
@@ -62,16 +63,16 @@ function Hero({handleLogIn}) {
           </Flex>
           <Flex style={{marginTop: 100}}>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://s3-us-west-2.amazonaws.com/paradigm-media-library/music_artists/Gucci%20Mane%20800x800.jpg"} />
+              <img alt="open sauced" src={"https://github.com/yg.png"} />
               <span>
-                <q>If you don't got sauce, then you lost.</q>
-                <Flex className="author">- Gucci Mane</Flex>
+                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
+                <Flex className="author">- bdougie</Flex>
               </span>
             </Flex>
             <Flex className="quote">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <img alt="open sauced" src={"https://github.com/yg.png"} />
               <span>
-                <q>Getting traction in contributing to open-source is just loggin in and getting started.</q>
+                <q>Dictum fusce ut placerat orci nulla pellentesque dignissim.</q>
                 <Flex className="author">- bdougie</Flex>
               </span>
             </Flex>
@@ -84,24 +85,8 @@ function Hero({handleLogIn}) {
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <h2>Contributor issue tracking and triaging</h2>
-                <p>Working on good first issues has never been easier. Create and track  your wishlist all in one dashboard.</p>
-              </FlexColumn>
-            </Flex>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Structured onboarding for new contributors</h2>
-                <p>Starting a new contribution is challenging when it is hard to find the content. Find project with structured contributing guidelines.</p>
-              </FlexColumn>
-            </Flex>
-          </Flex>
-          <Flex style={{justifyContent: "space-between"}}>
-            <Flex className="detail">
-              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
-              <FlexColumn className="copy">
-                <h2>Scheduled reminders</h2>
-                <p>Get notified when the contributions you are following change status or are closed.</p>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
             <Flex className="detail">
@@ -116,8 +101,24 @@ function Hero({handleLogIn}) {
             <Flex className="detail">
               <img alt="open sauced" src={"https://github.com/bdougie.png"} />
               <FlexColumn className="copy">
-                <h2>Find community and mentorship from approved projects</h2>
-                <p>No more guessing what issues are ups for grabs. Leverage the guidance from leaders in the project to grab issues ready for work.</p>
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
+            <Flex className="detail">
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn className="copy">
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
+              </FlexColumn>
+            </Flex>
+          </Flex>
+          <Flex style={{justifyContent: "space-between"}}>
+            <Flex className="detail">
+              <img alt="open sauced" src={"https://github.com/bdougie.png"} />
+              <FlexColumn className="copy">
+                <h2>Dictum fusce ut placerat orci nulla pellentesque dignissim.</h2>
+                <p>Dictum fusce ut placerat orci nulla pellentesque dignissim.</p>
               </FlexColumn>
             </Flex>
           </Flex>
