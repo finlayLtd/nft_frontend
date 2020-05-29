@@ -18,11 +18,11 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
           <SubtleLink href="https://dev.to/t/opensauced">Blog</SubtleLink>
         </li>
         <li>
-          <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+          <SubtleLink href="https://github.com/bdougie/open-sauced">GitHub</SubtleLink>
         </li>
         {user && (
           <li>
-            <SubtleLink className="nav-link" target="_blank" href="https://dev.to/bdougieyo/a-path-for-open-source-contributions-2oa2">
+            <SubtleLink className="nav-link" target="_blank" href="https://github.com/bdougie/open-sauced/issues/new/choose">
               Issue
             </SubtleLink>
           </li>
