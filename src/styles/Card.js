@@ -15,8 +15,8 @@ const Card = styled.div`
   min-width: 80%;
 
   a:hover {
-    text-decoration-color: ${colors.lightGrey};
-    color: ${colors.lightGrey};
+    text-decoration-color: ${colors.cheesyYellow};
+    color: ${colors.cheesyYellow};
   }
 
   a {
@@ -41,8 +41,8 @@ const Card = styled.div`
   span {
     font-size: 12px;
     font-weight: bold;
-    margin-right: 5px;
-    padding: 4px;
+    margin: ${size.tiny} ${size.tiny} 0 0;
+    padding: 5px;
     color: #fff;
     border-radius: 5px;
   }
@@ -72,22 +72,7 @@ const FittedCard = styled(Card)`
 `;
 
 const CardPadding = styled.div`
-  padding: ${size.tiny};
-
-  .pagination-buttons {
-    padding-left: 30px;
-  }
-`;
-
-const CardHeader = styled.div`
-  padding: ${size.tiny};
-  background: ${colors.lightestGrey};
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-  h1 {
-    padding-left: 30px;
-  }
+  padding: ${size.small} ${size.tiny} 0;
 `;
 
 const ContextStyle = styled(Card)`
@@ -169,4 +154,4 @@ const OnBoardStyle = styled(Card)`
   }
 `;
 
-export {Card, CardPadding, CardHeader, FittedCard, ContextStyle, HintStyle, OnBoardStyle};
+export {Card, CardPadding, FittedCard, ContextStyle, HintStyle, OnBoardStyle};

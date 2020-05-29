@@ -3,11 +3,10 @@ import {colors, size} from "../variables";
 import MEDIA from "../mediaTemplates";
 
 const Hero = styled.section`
-  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
   padding-left: 5rem;
   padding-right: 5rem;
-  padding-top: 0;
-  min-height: 15vh;
+  padding-top: 36px;
   margin: auto;
   overflow-y: hidden;
 
@@ -44,7 +43,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-  font-family: 'Arvo', serif;
+  font-family: "Arvo", serif;
 
   ${MEDIA.TABLET`
     padding: 0;
@@ -72,8 +71,8 @@ const PizzaPosition = styled.img`
 const SaucePosition = styled.img`
   height: 450px;
   position: absolute;
-  right: 4%;
-  top: 6%;
+  right: 12%;
+  top: 1%;
 `;
 
 const TopHero = styled(Hero)`
@@ -81,7 +80,7 @@ const TopHero = styled(Hero)`
 `;
 
 const SubHero = styled(Hero)`
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
   padding-bottom: 45px;
   padding-top: 32px;
   background-color: ${colors.cheesyYellow};
@@ -106,10 +105,14 @@ const TrustSection = styled(Hero)`
   ul {
     display: inline-flex;
     ${MEDIA.TABLET`
-      display: initial;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
     `};
   }
-  
+
   li {
     margin-right: 50px;
     display: flex;
@@ -132,10 +135,12 @@ const QuoteSection = styled(Hero)`
   padding-top: 10px;
 
   .quote {
+    width: 90%;
     margin-right: 16px;
     ${MEDIA.TABLET`
       margin: auto;
       text-align: center;
+      padding: 16px 0;
     `};
   }
 
@@ -162,6 +167,7 @@ const QuoteSection = styled(Hero)`
   }
 
   img {
+    border-radius: 5px;
     max-width: 150px;
     max-height: 150px;
     margin-right: 20px;
@@ -173,14 +179,20 @@ const QuoteSection = styled(Hero)`
     `};
   }
 
+  .quotes {
+    margin-top: 72px;
+  }
+
   .description {
     width: 40%;
     font-size: 14px;
     font-weight: bold;
     margin-top: 20px;
+    flex-direction: column;
     ${MEDIA.TABLET`
-      width: 100%;
-      text-align: center;
+      width: 90%;
+      padding-left: 24px;
+      text-align: left;
     `};
   }
 
@@ -192,8 +204,8 @@ const QuoteSection = styled(Hero)`
 
 const DetailsSection = styled(Hero)`
   background-color: white;
-  padding-top: 100px;
-.detail {
+  padding-top: 36px;;
+  .detail {
     ${MEDIA.TABLET`
       width: 80%;  
       margin: auto;
@@ -208,12 +220,9 @@ const DetailsSection = styled(Hero)`
   img {
     float: left;
     margin-right: 20px;
-    width: 50px;
-    height: 50px;
+    min-width: 30px;
     ${MEDIA.TABLET`
-      margin: auto;
-      margin-top: 10px;
-      text-align: center;    
+      display: none;
     `};
   }
 
@@ -222,12 +231,14 @@ const DetailsSection = styled(Hero)`
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
     text-align: left;
+    margin-bottom: 4px;
     ${MEDIA.TABLET`
-      margin: auto;
+      margin: 0;
       margin-top: 10px;
       margin-bottom: 10px;
-      text-align: left;    
+      text-align: left;
     `};
   }
 
@@ -236,9 +247,19 @@ const DetailsSection = styled(Hero)`
     font-weight: 500;
     ${MEDIA.TABLET`
       margin: auto;
-      text-align: center;    
+      text-align: left;
     `};
   }
 `;
 
-export {Wrapper, FoodElements, SubHero, TopHero, TrustSection, QuoteSection, DetailsSection, PizzaPosition, SaucePosition};
+export {
+  Wrapper,
+  FoodElements,
+  SubHero,
+  TopHero,
+  TrustSection,
+  QuoteSection,
+  DetailsSection,
+  PizzaPosition,
+  SaucePosition,
+};
