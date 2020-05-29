@@ -113,6 +113,7 @@ section {
 
 footer {
   margin: auto;
-  padding: 32px 50px;
+  padding: 32px;
+  text-align: center;
   width: 100%;
 }
