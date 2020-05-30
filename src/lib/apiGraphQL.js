@@ -241,16 +241,6 @@ const operationsDoc = `
     }
   }
 
-  query FetchMemberStatusQuery($owner: String!) {
-    gitHub {
-      viewer {
-        organization(login: "open-sauced") {
-          viewerIsAMember
-        }
-      }
-    }
-  }
-
   mutation CreateOpenSaucedGoalsRepo($ownerId: ID!) {
     gitHub {
       cloneTemplateRepository(
@@ -375,10 +365,6 @@ function fetchOwnerId(owner) {
   return fetchOneGraph(operationsDoc, "FetchOwnerQuery", {owner: owner});
 }
 
-function fetchMemberStatus(owner) {
-  return fetchOneGraph(operationsDoc, "FetchMemberStatusQuery");
-}
-
 function createOpenSaucedGoalsRepo(ownerId) {
   return fetchOneGraph(operationsDoc, "CreateOpenSaucedGoalsRepo", {ownerId: ownerId});
 }
@@ -409,7 +395,6 @@ const api = {
   },
   fetchGoalsQuery,
   fetchGoalQuery,
-  fetchMemberStatus,
   createOpenSaucedGoalsRepo,
   createGoal,
   updateGoal,
