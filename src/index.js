@@ -7,7 +7,6 @@ import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import OneGraphApolloClient from "onegraph-apollo-client";
 import {ApolloProvider} from "react-apollo";
-import api from "./lib/apiGraphQL";
 
 const apolloClient = new OneGraphApolloClient({
   oneGraphAuth: Config.auth,
@@ -15,7 +14,6 @@ const apolloClient = new OneGraphApolloClient({
 
 function Index() {
   const [user, setUser] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const auth = Config.auth;
@@ -23,16 +21,7 @@ function Index() {
       if (isLoggedIn) {
         const user = getUserFromJwt(auth);
         setUser(user);
-        api
-          .fetchMemberStatus()
-          .then(res => {
-            const viewerIsAMember = res.data.gitHub.viewer.organization === null ? false : true;
-            setIsAdmin(viewerIsAMember);
-            localStorage.setItem("adminBar", true);
-          })
-          .catch(e => {
-            console.log(e);
-          });
+
         return user;
       } else {
         console.warn("User is not logged into GitHub");
@@ -65,8 +54,6 @@ function Index() {
     auth.logout("github").then(() => {
       // Remove the local onegraph-auth storage
       localStorage.removeItem("oneGraph:" + Config.appId);
-      // Remove the local AdminStats bar status storage
-      localStorage.removeItem("adminBar");
       setUser(null);
     });
   };
@@ -76,7 +63,6 @@ function Index() {
       <ApolloProvider client={apolloClient}>
         <App
           user={user}
-          isAdmin={isAdmin}
           userId={user && user.id}
           handleLogIn={() => _handleLogIn()}
           handleLogOut={() => _handleLogOut()}

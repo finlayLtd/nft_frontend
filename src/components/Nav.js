@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {logo1 as logo} from "../logos";
 import {FloatLeftMobileNav, FloatRight} from "../styles/Grid";
 import {SubtleLink} from "../styles/Typography";
@@ -6,8 +6,6 @@ import {AppNav, HomeNav} from "../styles/Header";
 import {SpaceBetween} from "../styles/Grid";
 import {Link} from "react-router-dom";
 import ProfileAvatar from "../styles/ProfileAvatar";
-import AdminStatsBar from "./AdminStatsBar";
-import Hotkeys from "react-hot-keys";
 
 function LeftSide({user, handleLogIn, handleLogOut}) {
   return (
@@ -21,6 +19,9 @@ function LeftSide({user, handleLogIn, handleLogOut}) {
         </li>
         <li>
           <SubtleLink href="https://github.com/open-sauced/open-sauced">GitHub</SubtleLink>
+        </li>
+        <li>
+          <SubtleLink href="https://discord.gg/gZMKK5q">Discord</SubtleLink>
         </li>
         {user && (
           <li>
@@ -59,31 +60,13 @@ function RightSide({user}) {
   );
 }
 
-function Header({user, handleLogOut, handleLogIn, isAdmin}) {
-  console.log(localStorage.getItem("adminBar"));
-  const [adminBar, setAdminBar] = useState(localStorage.getItem("adminBar") === "true");
+function Header({user, handleLogOut, handleLogIn}) {
   const Nav = user ? AppNav : HomeNav;
-
-  const onKeyUp = () => {
-    localStorage.setItem("adminBar", !adminBar);
-    setAdminBar(!adminBar);
-  };
-
   return (
-    <div>
-      {isAdmin && (
-        <Hotkeys
-          keyName="`"
-          onKeyUp={(e) => onKeyUp(e)}
-        >
-          {adminBar && <AdminStatsBar />}
-        </Hotkeys>
-      )}
-      <Nav>
-        <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
-        <RightSide user={user} />
-      </Nav>
-    </div>
+    <Nav>
+      <LeftSide handleLogOut={handleLogOut} handleLogIn={handleLogIn} user={user} />
+      <RightSide user={user} />
+    </Nav>
   );
 }
 
