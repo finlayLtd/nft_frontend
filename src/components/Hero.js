@@ -36,9 +36,9 @@ function Hero({handleLogIn}) {
           <MarketingButton primary onClick={handleLogIn}>
             Login
           </MarketingButton>
-          <a target="_blank" href="https://discord.gg/gZMKK5q">
-            <MarketingButton>Join Discord</MarketingButton>
-          </a>
+          <MarketingButton primary onClick={handleLogIn}>
+            Signup
+          </MarketingButton>
         </Wrapper>
       </SubHero>
       <TrustSection>
@@ -48,24 +48,34 @@ function Hero({handleLogIn}) {
               <small>Trusted By</small>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/graphql/">
-                <img alt="graphql" src={graphql} />
-              </a>
+              <img
+                alt="graphql"
+                src={graphql}
+              />
             </li>
             <li>
-              <a target="_blank" href="https://github.com/vercel/next.js/">
-                <img alt="nextjs" src={next} />
-              </a>
+              <img
+                alt="nextjs"
+                src={
+                  next
+                }
+              />
             </li>
             <li>
-              <a target="_blank" href="https://github.com/electron/">
-                <img alt="electron" src={electron} />
-              </a>
+              <img
+                alt="electron"
+                src={
+                  electron
+                }
+              />
             </li>
             <li>
-              <a target="_blank" href="https://github.com/golang/">
-                <img alt="golang" src={go} />
-              </a>
+              <img
+                alt="golang"
+                src={
+                  go
+                }
+              />
             </li>
           </ul>
         </Wrapper>
@@ -81,7 +91,12 @@ function Hero({handleLogIn}) {
           </Flex>
           <Flex className="quotes">
             <Flex className="quote">
-              <img alt="open sauced" src={gucci} />
+              <img
+                alt="open sauced"
+                src={
+                  gucci
+                }
+              />
               <span>
                 <q>If you don't got sauce, then you lost.</q>
                 <Flex className="author">- Gucci Mane</Flex>
