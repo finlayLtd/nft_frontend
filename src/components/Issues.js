@@ -90,7 +90,7 @@ function Issues({repoName, owner}) {
       loading ? (
         <Spinner />
       ) : (
-        <EmptyPlaceholder style={{marginTop: 100}}>
+        <EmptyPlaceholder>
           <div style={{color: "grey"}}>
             <Octicon size="large" verticalAlign="middle" icon={getIconByName("issue-opened")} />
           </div>
