@@ -5,18 +5,15 @@ import List from "../styles/List";
 import IssuesListItem from "../components/IssueListItem";
 import {CardPadding} from "../styles/Card";
 import {AccentLink, MicroFont} from "../styles/Typography";
-import {Spinner} from "../styles/Spinner";
 
 function Contributions({repoName, owner}) {
   const [issues, setIssues] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     api.fetchRepoInteractions(owner, repoName).then(response => {
       const {data} = response.data.gitHub.repository.issues;
+
       setIssues(data);
-      setLoading(false);
     });
   }, []);
 
@@ -30,10 +27,7 @@ function Contributions({repoName, owner}) {
           </MicroFont>
         </CardPadding>
         <List>
-          {loading ? (
-            <Spinner />
-          ) : (
-            issues &&
+          {issues &&
             issues.map(issue => (
               <li key={issue.node.id}>
                 <a target="_blank" href={issue.node.url}>
@@ -45,8 +39,7 @@ function Contributions({repoName, owner}) {
                   />
                 </a>
               </li>
-            ))
-          )}
+            ))}
         </List>
       </Card>
     )
