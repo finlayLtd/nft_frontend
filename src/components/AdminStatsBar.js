@@ -55,9 +55,7 @@ function RightSide({timing, rateLimit, repoCount}) {
           <span>🕒</span>{humanizer(timing.loadTime)} <span className="helper">load</span>
         </li>
         <li>
-          <a href="https://github.com/search?o=desc&q=open-sauced-goals&s=updated&type=Repositories" target="_blank">
-            <span>😍</span>Users: {repoCount}
-          </a>
+          <span>😍</span>Users: {repoCount}
         </li>
         <li>
           Rate Limit: {rateLimit}
