@@ -44,19 +44,6 @@ const operationsDoc = `
                   }
                 }
               }
-              comments {
-                totalCount
-              }
-              milestone {
-                title
-              }
-              participants(first: 3) {
-                totalCount
-                nodes {
-                  login
-                  avatarUrl
-                }
-              }
               createdAt
             }
           }
@@ -94,13 +81,6 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
-          languages(first: 3) {
-            totalCount
-            nodes {
-              name
-              color
-            }
-          }
         }
       }
     }
@@ -129,19 +109,6 @@ const operationsDoc = `
                       name
                       color
                     }
-                  }
-                }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
                   }
                 }
                 createdAt
@@ -178,19 +145,6 @@ const operationsDoc = `
                     }
                   }
                 }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
-                  }
-                }
                 createdAt
               }
             }
@@ -223,19 +177,6 @@ const operationsDoc = `
                       name
                       color
                     }
-                  }
-                }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
                   }
                 }
                 createdAt
