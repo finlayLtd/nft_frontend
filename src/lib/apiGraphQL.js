@@ -44,19 +44,6 @@ const operationsDoc = `
                   }
                 }
               }
-              comments {
-                totalCount
-              }
-              milestone {
-                title
-              }
-              participants(first: 3) {
-                totalCount
-                nodes {
-                  login
-                  avatarUrl
-                }
-              }
               createdAt
             }
           }
@@ -94,13 +81,6 @@ const operationsDoc = `
           stargazers {
             totalCount
           }
-          languages(first: 3) {
-            totalCount
-            nodes {
-              name
-              color
-            }
-          }
         }
       }
     }
@@ -129,19 +109,6 @@ const operationsDoc = `
                       name
                       color
                     }
-                  }
-                }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
                   }
                 }
                 createdAt
@@ -178,19 +145,6 @@ const operationsDoc = `
                     }
                   }
                 }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
-                  }
-                }
                 createdAt
               }
             }
@@ -225,19 +179,6 @@ const operationsDoc = `
                     }
                   }
                 }
-                comments {
-                  totalCount
-                }
-                milestone {
-                  title
-                }
-                participants(first: 3) {
-                  totalCount
-                  nodes {
-                    login
-                    avatarUrl
-                  }
-                }
                 createdAt
               }
             }
@@ -267,13 +208,6 @@ const operationsDoc = `
       viewer {
         repository(name: "open-sauced-goals") {
           id
-          data: object(expression: "master:data.json") {
-            id
-            ... on GitHubBlob {
-              id
-              text
-            }
-          }
           issues(
             first: 10
             states: OPEN
@@ -282,7 +216,7 @@ const operationsDoc = `
             totalCount
             nodes {
               id
-              full_name: title
+              title
               body
               number
               labels(first: 3) {

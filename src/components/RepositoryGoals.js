@@ -9,8 +9,6 @@ import Cards from "./Card";
 import {doneChecking} from "../illustrations";
 import {ContextStyle} from "../styles/Card";
 import {goalsReducer, usePersistentStateReducer} from "../lib/reducers";
-import {EmptyPlaceholder} from "../styles/EmptyPlaceholder";
-import Octicon, {getIconByName} from "@primer/octicons-react";
 
 function RepositoryGoals({user}) {
   const {goalsId, setGoalsId} = useContext(LocaleContext);
@@ -47,8 +45,6 @@ function RepositoryGoals({user}) {
     dispatch({type: "UPDATE", payload: updatedRepos});
   };
 
-  const data = repository.data && JSON.parse(repository.data.text);
-
   return (
     <section>
       {repository && repository.issues ? (
@@ -76,18 +72,7 @@ function RepositoryGoals({user}) {
           </ContextStyle>
           <Cards fitted>
             <AddRepoForm goalsId={goalsId} onGoalAdded={onGoalAdded} />
-            {repository.issues.totalCount > 0 ? (
-              <ListGoals data={data} goals={repository.issues} />
-            ) : (
-              <EmptyPlaceholder>
-                <div style={{color: "grey"}}>
-                  <Octicon size="large" verticalAlign="middle" icon={getIconByName("checklist")} />
-                </div>
-                <div className="helper">
-                  No Goals created
-                </div>
-              </EmptyPlaceholder>
-            )}
+            <ListGoals goals={repository.issues} />
           </Cards>
         </React.Fragment>
       ) : (

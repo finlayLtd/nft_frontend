@@ -4,23 +4,20 @@ import {Container} from "../styles/ListItem";
 import RepoListItem from "../components/RepoListItem";
 import Card from "../components/Card";
 import List from "../styles/List";
-import {merge} from "lodash";
 
-function ListGoals({goals, data}) {
-  const goalsWithData = merge(goals.nodes, data);
-
+function ListGoals({goals}) {
   return (
     <Container>
       <Card fitted>
         <List>
-          {goalsWithData &&
-            goalsWithData.map(goal => (
+          {goals &&
+            goals.nodes.map(goal => (
               <li key={goal.id}>
                 <Link
                   to={{
-                    pathname: `/repos/${goal.full_name.replace(/\s+/g, "")}/${goal.number}`,
+                    pathname: `/repos/${goal.title.replace(/\s+/g, "")}/${goal.number}`,
                   }}>
-                  <RepoListItem goal={goal} stars={goal.stargazers_count} />
+                  <RepoListItem goal={goal} stars={328} contributors={18} />
                 </Link>
               </li>
             ))}

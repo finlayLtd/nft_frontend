@@ -18,13 +18,13 @@ const data = {
       {
         id: Math.random(),
         name: "Mock Repository A",
-        full_name: "mock/A",
+        title: "mock/A",
         labels: {data: []},
       },
       {
         id: Math.random(),
         name: "Mock Repository B",
-        full_name: "mock/B",
+        title: "mock/B",
         labels: {data: []},
       },
     ],
