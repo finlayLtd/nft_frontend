@@ -64,7 +64,7 @@ function Repository({match}) {
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <ContextStyle>
         <SpaceBetween>
-          <div>
+          <div className="context-div">
             <a style={{textDecoration: "none"}} href={url} rel="noreferrer" target="_blank">
               {nameWithOwner ? (
                 <h1>{nameWithOwner}</h1>
@@ -83,6 +83,17 @@ function Repository({match}) {
                 </a>
               </em>
             </small>
+            <div className="languages">
+              {repository && repository.languages.nodes.map((language, key) => (
+                <span key={key}>
+                  <span className="dot"  style={{color: language.color}}>•</span>
+                  <span className="name">{language.name}</span>
+                </span>
+              ))}
+              <span className="more">
+                {repository && repository.languages.totalCount > 3 && `+${repository.languages.totalCount - 3} languages`}
+              </span>
+            </div>
           </div>
           <Illustration src={diary} />
         </SpaceBetween>
