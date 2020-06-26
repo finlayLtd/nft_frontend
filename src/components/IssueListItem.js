@@ -43,16 +43,16 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                   {milestone.title}
                 </span>
               )}
-              <div className="avatar-stack">
-                {participants && participants.nodes.map((user, key) => (
-                  <img className="avatar" key={key} src={user.avatarUrl} title={user.login} />
-                ))}
+              {participants && participants.nodes.map((user, key) => (
+                <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
+              ))}
+              <span className="issueHelper">
                 {
                   participants &&
                   participants.totalCount > participantsDiffCount &&
-                   (<div className="others">+{participantsShowDiff}</div>)
+                   `+${participantsShowDiff} participant${participantsShowDiff !== 1 ? "s" : ""}`
                 }
-              </div>
+              </span>
             </div>
           </FlexColumn>
         </FlexCenter>
