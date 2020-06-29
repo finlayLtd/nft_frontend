@@ -9,7 +9,7 @@ const DoneChecking = styled.img`
   border-radius: ${borderRadius};
   padding: 0 20px
 
-  ${MEDIA.DESKTOP`
+  ${MEDIA.TABLET`
     display: none;
   `};
 `;
