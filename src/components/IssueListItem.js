@@ -4,7 +4,6 @@ import {chevronRight} from "../icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import {IssueOpenedIcon, CommentIcon, MilestoneIcon} from "@primer/octicons-react";
-import contrast from "contrast";
 
 dayjs.extend(relativeTime);
 
@@ -25,7 +24,7 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
             <div>
               {labels.data.length > 0 && labels.data.map(label => (
                 <span
-                  style={{backgroundColor: `#${label.node.color}`, color: `${contrast(label.node.color) === "light" ? "black" : "white"}`}}
+                  style={{backgroundColor: `#${label.node.color}`}}
                   key={label.node.id}>
                   {label.node.name}
                 </span>
@@ -44,16 +43,16 @@ function IssueListItem({title, labels, author, opened, type, participants, comme
                   {milestone.title}
                 </span>
               )}
-              {participants && participants.nodes.map((user, key) => (
-                <img className="participants" key={key} src={user.avatarUrl} title={user.login} />
-              ))}
-              <span className="issueHelper">
+              <div className="avatar-stack">
+                {participants && participants.nodes.map((user, key) => (
+                  <img className="avatar" key={key} src={user.avatarUrl} title={user.login} />
+                ))}
                 {
                   participants &&
                   participants.totalCount > participantsDiffCount &&
-                   `+${participantsShowDiff} participant${participantsShowDiff !== 1 ? "s" : ""}`
+                   (<div className="others">+{participantsShowDiff}</div>)
                 }
-              </span>
+              </div>
             </div>
           </FlexColumn>
         </FlexCenter>
