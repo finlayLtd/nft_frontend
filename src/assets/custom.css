@@ -1,0 +1,105 @@
+/* custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #343434;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+    background: #343434
+}
+
+/* Remove Arrows/Spiners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea {
+    -webkit-box-shadow: none;
+}
+
+@font-face {
+    font-family: "fontawesome";
+    src: url(./fonts/fontawesome-webfont.ttf);
+}
+
+@font-face {
+    font-family: "ibm";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-Regular.otf);
+}
+
+@font-face {
+    font-family: "ibm-medium";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-Medium.otf);
+}
+
+@font-face {
+    font-family: "ibm-bold";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-Bold.otf);
+}
+
+@font-face {
+    font-family: "ibm-semi-bold";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-SemiBold.otf);
+}
+
+@font-face {
+    font-family: "ibm-light";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-Light.otf);
+}
+
+@font-face {
+    font-family: "ibm-thin";
+    font-display: block;
+    src: url(./fonts/IBMPlexMono-Thin.otf);
+}
+
+@font-face {
+    font-family: "press";
+    font-display: block;
+    src: url(./fonts/PressStart2P-Regular.ttf);
+}
+
+.ape-grad {
+    background-image: radial-gradient(circle at 70% 55%, rgb(34, 34, 34) 0%,
+            rgba(21, 21, 21, 0.5) 25%,
+            rgba(0, 0, 0, 0.521) 40%,
+            rgb(0, 0, 0) 100%);
+}
+
+.explore-grad-primary {
+    background-image: radial-gradient(circle, rgba(25, 203, 88, 0.178) 0%,
+            rgba(25, 203, 87, 0.329) 40%,
+            rgba(25, 203, 88, 0.733) 90%,
+            rgb(25, 203, 88) 100%);
+}
+
+.explore-grad-secondary {
+    background-image: radial-gradient(circle, rgba(25, 105, 203, 0.178) 0%,
+            rgba(25, 105, 203, 0.26) 40%,
+            rgba(25, 105, 203, 0.733) 90%,
+            rgb(25, 105, 203) 100%);
+}

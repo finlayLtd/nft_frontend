@@ -1,56 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><%= title %></title>
-    <meta name="description" content="The path to your next open-source contribution." />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-    <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="theme-color" content="#FFFFFF" />
+<html lang="en" class="scroll-smooth">
 
-    <meta property="dcterms:modified" content="<%= date %>" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFT Protection</title>
+</head>
 
-    <!-- For facebook, linkedin etc -->
-    <meta property="og:title" content="<%= title %>" />
-    <meta property="og:url" content="https://app.opensauced.pizza" />
-    <meta property="og:type" content="article" />
-    <meta
-      property="og:description"
-      content="Open Sauced provides structured onboarding for new contributors to open source. This structure provides a way to track your next contributions by leveraging a unique dashboard built on top of the GitHub GraphQL API."
-    />
-    <meta property="og:image" content="/social-card.png" />
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    window.global = window
+    let global = globalThis
+  </script>
 
-    <!-- for twitter -->
-    <meta property="twitter:title" content="Open Sauced" />
-    <meta property="twitter:url" content="https://app.opensauced.pizza" />
-    <meta property="twitter:type" content="article" />
+  <script type="module">
+    import process from 'process'
+    window.process = process
+  </script>
 
-    <meta
-      property="twitter:description"
-      content="Open Sauced is a platform to gain insights on open source contributors and their contributions."
-    />
-    <meta property="twitter:image" content="/social-card.png" />
+  <script type="module">
+    import buffer from 'buffer'
+    window.Buffer = buffer.Buffer
+  </script>
 
-    <meta name="theme-color" content="#FFFFFF" />
-  </head>
+  <script type="module">
+    import util from 'util'
+    window.util = util
+  </script>
 
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.jsx"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <script type="module">
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</body>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
-  </body>
 </html>

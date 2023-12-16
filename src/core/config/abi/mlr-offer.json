@@ -1,0 +1,541 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nftContract",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_tokenId",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "offerID",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sellerAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "protectionAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "protectionExpiryTime",
+                "type": "uint256"
+            }
+        ],
+        "name": "AcceptOffer",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "offerID",
+                "type": "uint256"
+            }
+        ],
+        "name": "CancelOffer",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "offerID",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "statusOrder",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "soldTime",
+                "type": "uint256"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "buyerOrSeller",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "claimAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "ClaimDownsideProtectionInOffer",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "offerID",
+                "type": "uint256"
+            }
+        ],
+        "name": "CreateOffer",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "gasFee",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "Reimburse",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_offerId",
+                "type": "uint256"
+            }
+        ],
+        "name": "acceptOffer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256[]",
+                "name": "_offerIds",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "cancelOffer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_offerId",
+                "type": "uint256"
+            }
+        ],
+        "name": "claimDownsideProtectionAmountInOffer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_vaultAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_tokenPrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint64",
+                "name": "_protectionRate",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_protectionTime",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint64",
+                "name": "_slippageRate",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_offerExpiration",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "socialNftURI",
+                "type": "string"
+            }
+        ],
+        "name": "createOffer",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "depository",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "factory",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "farming",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_offerId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getOffer",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "enum MLROffer.OfferStatus",
+                        "name": "statusOffer",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "sellerAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "buyerAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "tokenPrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "buyPrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "protectionAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "depositId",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "protectionRate",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "protectionTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "slippageRate",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "soldTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "offerExpiration",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct MLROffer.Offer",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_mlrManage",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_mlr",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_farming",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_depository",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_socialNFT",
+                "type": "address"
+            }
+        ],
+        "name": "initialize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "mlr",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "mlrManage",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "nftContract",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "offerIdCount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "offers",
+        "outputs": [
+            {
+                "internalType": "enum MLROffer.OfferStatus",
+                "name": "statusOffer",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address payable",
+                "name": "sellerAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address payable",
+                "name": "buyerAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenPrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "buyPrice",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "protectionAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "depositId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint64",
+                "name": "protectionRate",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint256",
+                "name": "protectionTime",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint64",
+                "name": "slippageRate",
+                "type": "uint64"
+            },
+            {
+                "internalType": "uint256",
+                "name": "soldTime",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "offerExpiration",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "socialNFT",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "tokenId",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_msgSender",
+                "type": "address"
+            }
+        ],
+        "name": "withdrawNFT",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    }
+]

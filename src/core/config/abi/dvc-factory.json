@@ -1,0 +1,251 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "dvc",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "DVCCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "gasFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fee",
+        "type": "uint256"
+      }
+    ],
+    "name": "Reimburse",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "allDVCsLength",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_uniqueID",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_vBNB",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_protectedMarketplace",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_mlrFactory",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_isCloseEnded",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_dueDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_finalDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_reimburseLimit",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address[]",
+            "name": "_nftAddress",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isPack",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isAuction",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_maxPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_minPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_auctionRate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "_protectionRate",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "_protectionExpiryTime",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "_useMLR",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DVCFactory.BuyCriteriaArgs",
+        "name": "buyArgs",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "_isFixedAbovePrice",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_abovePriceRate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isAuction",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isPack",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_amountNFT",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "_useDepository",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "_protectionRate",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isFixedProtection",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "_slippageRate",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "_useMLR",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint32",
+            "name": "_royalty",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_buyoutPrice",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DVCFactory.SellCriteriaArgs",
+        "name": "sellArgs",
+        "type": "tuple"
+      }
+    ],
+    "name": "createDVC",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "dvc",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getDVCByIndex",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
